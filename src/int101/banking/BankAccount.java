@@ -15,7 +15,7 @@ public class BankAccount {
         this.accountNo = nextAccountNo++;
         this.accountName = accountName;
         this.accountOwner = accountOwner;
-        // ToDo: accountHistory ...
+        // ToDo: accountHistory ... OPEN
         this.balance = new BigDecimal(0);
     }
 
@@ -31,7 +31,7 @@ public class BankAccount {
     public BankAccount deposit(double amount) {
         if (amount<=0) return null;
         balance = balance.add(new BigDecimal(amount));
-        // ToDo: accountHistory ...
+        // ToDo: accountHistory ... DEPOSIT
         return this;
     }
     
@@ -39,7 +39,7 @@ public class BankAccount {
         if (amount<=0) return null;
         if (balance.doubleValue()<amount) return null;
         balance = balance.subtract(new BigDecimal(amount));
-        // ToDo: accountHistory ...
+        // ToDo: accountHistory ... WITHDRAW
         return this;
     }
     
@@ -53,8 +53,8 @@ public class BankAccount {
         if (to==null) return null;
         if (withdraw(amount)==null) return null;
         to.deposit(amount);
-        // ToDo: accountHistory ... this
-        // ToDo: accountHistory ... to
+        // ToDo: accountHistory ... this TRANSFER_OUT
+        // ToDo: accountHistory ... to TRANSFER_IN
         return this;
     }
 
