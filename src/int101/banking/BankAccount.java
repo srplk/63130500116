@@ -46,7 +46,9 @@ public class BankAccount {
        - if everything is ok, return this (for method chaining).
     */
     public BankAccount transferTo(BankAccount to, double amount) {
-        // ToDo: add your code here
+        if (to==null) return null;
+        if (withdraw(amount)==null) return null;
+        to.deposit(amount);
         return this;
     }
 
