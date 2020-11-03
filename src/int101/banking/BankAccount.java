@@ -22,9 +22,8 @@ public class BankAccount {
        - use "firstname lastname" of accountOwner as the accountName;
     */
     public BankAccount(Person accountOwner) {
-        this.accountOwner = accountOwner;
-        // ToDo: add your code here
-        throw new RuntimeException(); // ** remove this line
+        this(accountOwner.getFirstname() + 
+                " " + accountOwner.getLastname(), accountOwner);
     }
     
     public BankAccount deposit(double amount) {
@@ -41,6 +40,7 @@ public class BankAccount {
     }
     
     /* ToDo:
+       - check if to Account is not null first.
        - try withdraw from this account first (call withdraw()); if fails, return null.
        - deposit to the other account (call deposit()); if fails, return null.
        - if everything is ok, return this (for method chaining).
